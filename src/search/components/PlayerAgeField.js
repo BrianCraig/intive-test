@@ -11,7 +11,8 @@ const PlayerAgeFieldComponent = ({age, setAge = () => {}, removeAge = () => {}})
   return (
     <React.Fragment>
       <Form.Control
-        min={0}
+        min={18}
+        max={40}
         step={1}
         type={"number"}
         placeholder="Age"

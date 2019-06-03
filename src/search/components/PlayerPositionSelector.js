@@ -10,6 +10,7 @@ const PlayerPositionSelectorComponent = ({position, setPosition, removePosition}
     options={positionsMap}
     onChange={(option) => option ? setPosition(option.value) : removePosition()}
     isClearable={true}
+    placeholder={"Position"}
   />
 
 export const PlayerPositionSelector = connect(

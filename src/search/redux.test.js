@@ -1,7 +1,13 @@
 import {searchReducer, searchReducerInitialState} from "./reducers";
-import {players} from "./mocks/playersMock";
+import {players} from "./mocks/playersMock.mock";
 import * as actionTypes from "./actionTypes";
-import {addPlayersAction, removePositionAction, setPositionAction} from "./actions";
+import {
+  addPlayersAction,
+  removeAgeAction,
+  removePositionAction, setAgeAction,
+  setPositionAction,
+  setSearchNameAction
+} from "./actions";
 import {positions} from "./positions";
 
 describe('searchReducer tests', () => {

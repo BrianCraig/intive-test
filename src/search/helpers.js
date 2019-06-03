@@ -1,0 +1,1 @@
+export const playerAge = (player) => new Date(new Date() - new Date(player.dateOfBirth)).getFullYear() - 1970

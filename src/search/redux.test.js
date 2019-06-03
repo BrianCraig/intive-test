@@ -24,7 +24,7 @@ describe('searchReducer tests', () => {
     })
 
     it('should set & remove the position', () => {
-      const stateWithPosition = searchReducer(searchReducerInitialState, setPositionAction(positions.ATTACKING_MIDFIELD));
+      const stateWithPosition = searchReducer(searchReducerInitialState, setPositionAction('ATTACKING_MIDFIELD'));
       expect(stateWithPosition)
         .toHaveProperty('position', 'ATTACKING_MIDFIELD')
       expect(searchReducer(stateWithPosition, removePositionAction()))

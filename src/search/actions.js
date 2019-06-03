@@ -5,6 +5,11 @@ export const addPlayersAction = (players) => ({
   payload: players
 })
 
-export const setPositionAction = (position) => ({})
+export const setPositionAction = (position) => ({
+  type: actionTypes.SET_POSITION,
+  payload: position
+})
 
-export const removePositionAction = () => ({})
+export const removePositionAction = () => ({
+  type: actionTypes.REMOVE_POSITION
+})

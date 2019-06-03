@@ -1,1 +1,5 @@
 export const ADD_PLAYERS = 'ADD_PLAYERS'
+
+export const SET_POSITION = 'SET_POSITION'
+
+export const REMOVE_POSITION = 'REMOVE_POSITION'

@@ -13,3 +13,14 @@ export const setPositionAction = (position) => ({
 export const removePositionAction = () => ({
   type: actionTypes.REMOVE_POSITION
 })
+
+export const setAgeAction = (position) => ({
+  type: actionTypes.SET_POSITION,
+  payload: position
+})
+
+export const removeAgeAction = () => ({
+  type: actionTypes.REMOVE_POSITION
+})
+
+export const setSearchNameAction = (searchName) => ({})

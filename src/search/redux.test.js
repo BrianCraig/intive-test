@@ -31,4 +31,31 @@ describe('searchReducer tests', () => {
         .not.toHaveProperty('position')
     })
   })
+
+  describe('age test', () => {
+    it('should not have initial age set', () => {
+      expect(searchReducerInitialState)
+        .not.toHaveProperty('age')
+    })
+
+    it('should set & remove the age', () => {
+      const stateWithAge = searchReducer(searchReducerInitialState, setAgeAction(28));
+      expect(stateWithAge)
+        .toHaveProperty('age', 28)
+      expect(searchReducer(stateWithAge, removeAgeAction()))
+        .not.toHaveProperty('age')
+    })
+  })
+
+  describe('search name test', () => {
+    it('should have \'\' as initial search', () => {
+      expect(searchReducerInitialState)
+        .toHaveProperty('searchName', '')
+    })
+
+    it('should set new name searches', () => {
+      expect(searchReducer(searchReducerInitialState, setSearchNameAction('query')))
+        .toHaveProperty('searchName', 'query')
+    })
+  })
 })

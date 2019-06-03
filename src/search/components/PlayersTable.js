@@ -1,7 +1,8 @@
 import React from "react";
 import {Table} from "react-bootstrap";
+import {connect} from "react-redux";
 
-const PlayerTableComponent = () =>
+const PlayerTableComponent = ({players}) =>
   <Table striped bordered hover>
     <thead>
     <tr>
@@ -12,24 +13,17 @@ const PlayerTableComponent = () =>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    {players.map((player) => (
+      <tr>
+        <td>{player.name}</td>
+        <td>{player.position}</td>
+        <td>{player.nationality}</td>
+        <td>{player.dateOfBirth}</td>
+      </tr>
+    ))}
     </tbody>
   </Table>
 
-export const PlayerTable = PlayerTableComponent;
+export const PlayerTable = connect(
+  state => ({players: state.players})
+)(PlayerTableComponent);

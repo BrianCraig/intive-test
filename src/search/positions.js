@@ -10,3 +10,10 @@ export const positions = {
   LEFT_MIDFIELD: "Left Midfield",
   LEFT_WING: "Left Wing"
 }
+
+export const positionsMap = Object.keys(positions).map((position) => ({
+  label: positions[position],
+  value: position
+}))
+
+export const positionLabelFromKey = (key) => positionsMap.find((option) => option.value === key);

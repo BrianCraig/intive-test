@@ -1,6 +1,7 @@
 import React from "react";
 import {Table} from "react-bootstrap";
 import {connect} from "react-redux";
+import {filteredPlayersSelector} from "../selectors";
 
 const PlayerTableComponent = ({players}) =>
   <Table striped bordered hover>
@@ -25,5 +26,5 @@ const PlayerTableComponent = ({players}) =>
   </Table>
 
 export const PlayerTable = connect(
-  state => ({players: state.players})
+  state => ({players: filteredPlayersSelector(state)})
 )(PlayerTableComponent);
